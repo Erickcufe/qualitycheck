@@ -1,6 +1,17 @@
 
 library(lubridate)
 # Para uno de cada uno
+#' Title
+#'
+#' @param Producto 
+#' @param Lote 
+#' @param Fecha_inicio 
+#' @param Protocolo 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 qualitycheck_dates <- function(Producto, Lote, Fecha_inicio, Protocolo){
   Fecha_inicio <- dmy(Fecha_inicio)
   

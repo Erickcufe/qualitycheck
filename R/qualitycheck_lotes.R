@@ -1,4 +1,14 @@
 #  Para una lista de lotes 
+#' Title
+#'
+#' @param Producto 
+#' @param Lista_lotes 
+#' @param Lista_fechas 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 qualitycheck_lotes <- function(Producto, Lista_lotes, Lista_fechas) {
     
   my_data<-list()  
