@@ -1,14 +1,29 @@
 
-
+library(lubridate)
+# Para uno de cada uno
 qualitycheck_dates <- function(Producto, Lote, Fecha_inicio, Protocolo){
   Fecha_inicio <- dmy(Fecha_inicio)
   
-  check_list <- (
-    rbind(Producto = Producto, 
-          Lote = Lote, 
-          Fecha_inicio = as.character(Fecha_inicio),
-          Protocolo = Protocolo)
-  )
+  if (missing(Protocolo)) {
+    
+    check_list <- (
+      rbind(Producto = Producto, 
+            Lote = Lote, 
+            Fecha_inicio = as.character(Fecha_inicio),
+            Protocolo = "")
+    )
+    
+  } else {
+    
+    check_list <- (
+      rbind(Producto = Producto, 
+            Lote = Lote, 
+            Fecha_inicio = as.character(Fecha_inicio),
+            Protocolo = Protocolo)
+    )
+    
+  }
+ 
   
   date1 <- Fecha_inicio + 30  
   date2 <- Fecha_inicio + (30 * 6)
@@ -21,22 +36,34 @@ qualitycheck_dates <- function(Producto, Lote, Fecha_inicio, Protocolo){
   date9 <- Fecha_inicio + (30 * 60)
   
   check_list <- rbind(check_list, 
-                      Fecha1 = as.character(date1),
-                      Fecha2 = as.character(date2),
-                      Fecha3 = as.character(date3),
-                      Fecha4 = as.character(date4),
-                      Fecha5 = as.character(date5),
-                      Fecha6 = as.character(date6),
-                      Fecha7 = as.character(date7),
-                      Fecha8 = as.character(date8),
-                      Fecha9 = as.character(date9))
+                      Mes_1 = as.character(date1),
+                      Mes_6 = as.character(date2),
+                      Mes_9 = as.character(date3),
+                      Mes_12 = as.character(date4),
+                      Mes_18 = as.character(date5),
+                      Mes_24 = as.character(date6),
+                      Mes_36 = as.character(date7),
+                      Mes_48 = as.character(date8),
+                      Mes_60 = as.character(date9))
+  
+  name_file <- paste0(Producto,"_", Lote)
+  write.csv(check_list, paste0(name_file,".csv"))
   return(check_list)
+  
   
 }
 
-a <- qualitycheck_dates("Metformina", "Z0450", "10-06-2019", "AP123")
 
-library(lubridate)
+a<-qualitycheck_dates("Aspirina", "Z0450", "10-06-2019")
+
+
+
+
+
+
+
+
+
 
 df<-data.frame(
   producto= "Talidomina",
@@ -44,11 +71,4 @@ df<-data.frame(
   Fecha_inicio=dmy("10-06-2019")
 )
 
-"10-06-2019"
-# fechas siguientes 
-# 1 mes
-# 6, 9, 12, 18, 24, 36, 48, 60 
 
-# day-moth-year
-
-dmy("15-10-2011") + 30
