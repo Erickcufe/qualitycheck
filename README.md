@@ -1,5 +1,5 @@
 # qualitycheck
-This code organizate the information by date, lote and product for a pharmaceutical industry
+This code organizate the information by date, lot and product for a pharmaceutical industry
 
 # Installation
 ```
