@@ -1,0 +1,39 @@
+---
+title: "qualitycheck"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{qualitycheck}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+Esta paqueteria contiene las funciones para ordenar las fechas de los lotes de productos, genera los archivos y en esos archivos se les puede anexar cambios.
+
+```{r setup}
+library(qualitycheck)
+library(lubridate)
+```
+
+## qualitycheck_dates(Producto, Lote, Fecha_inicio, Protocolo)
+Se ingresa todo entre comillas y separado con una coma:
+se ingresa el nombre del producto, del lote, fecha de inicio en fomarto dia-mes-año (day-month-year; "09-03-2019"), y el ID del protocolo si es que existe. Esta funcion escribe en la computadora un documento .csv con el nombre del Producto_Lote.csv en el directorio donde se encuentra trabajando el usuario
+```{r}
+qualitycheck_dates("Metformin", "0001", "08-01-2019")
+```
+
+## qualitycheck_lots(Producto, Lista_lotes, Lista_fechas).
+Se ingresa todo entre comillas y separado con una coma:
+Como en el ejemplo si se introducen forma de vector c("1","2","3") los lotes, se deben ingresar tambien la misma cantidad de fechas de inicio. 
+Esta funcion genera un .csv con los lotes y sus fechas.
+
+```{r}
+qualitycheck_lots("Aspirina", c("1a","2b","3c","4c"), c("10-09-2019", "20-03-2019","30-03-2019", "30-11-2019"))
+
+```
+

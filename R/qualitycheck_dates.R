@@ -1,21 +1,30 @@
-
-library(lubridate)
-# Para uno de cada uno
-#' Title
+#' qualitycheck_dates
 #'
-#' @param Producto 
-#' @param Lote 
-#' @param Fecha_inicio 
-#' @param Protocolo 
+#'This function create a .csv document with 
+#'the dates of a Lot of product since the date of departure date
+#'
+#'
+#' @param Producto A character of the name of the product. Ej: "Aspirin"
+#' @param Lote A character with the ID of the Lote
+#' @param Fecha_inicio A character date with the format in numer day-month-year; ej: "01-08-2019"
+#' @param Protocolo A character date with the ID of protocol if this exist 
 #'
 #' @return
+#' This function return a .csv document with the name of the Pruduct_Lote.csv in the 
+#' directory of work, this document include all dates.  
 #' @export
 #'
 #' @examples
+#' qualitycheck_dates("Aspririn", "Z0194", "03-03-2019")
+#' qualitycheck_dates("Metformin", "0001", "08-01-2019")
+#' 
+
+# library(lubridate)
 qualitycheck_dates <- function(Producto, Lote, Fecha_inicio, Protocolo){
   Fecha_inicio <- dmy(Fecha_inicio)
   
   if (missing(Protocolo)) {
+    
     
     check_list <- (
       rbind(Producto = Producto, 
@@ -65,21 +74,7 @@ qualitycheck_dates <- function(Producto, Lote, Fecha_inicio, Protocolo){
 }
 
 
-a<-qualitycheck_dates("Aspirina", "Z0450", "10-06-2019")
-
-
-
-
-
-
-
-
-
-
-df<-data.frame(
-  producto= "Talidomina",
-  Lote="APZ024",
-  Fecha_inicio=dmy("10-06-2019")
-)
+# a<-qualitycheck_dates("Aspirina", "Z0450", "10-06-2019")
+# a<-qualitycheck_dates("Aspirina", "Z0450", "10-06-2019")
 
 
