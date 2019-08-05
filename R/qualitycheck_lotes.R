@@ -1,4 +1,4 @@
-#' qualititycheck_lots
+#' qualititycheck_lotes
 #'
 #' @param Producto A character of the name of the product. Ej: "Aspirin"
 #' @param Lista_lotes A character vector with the ID of the Lote
@@ -13,7 +13,7 @@
 #' @examples
 #' b <- qualitycheck_lots("Aspirina", c("1a","2b","3c","4c"), c("10-09-2019", "20-03-2019","30-03-2019", "30-11-2019"))
 #' 
-qualitycheck_lots <- function(Producto, Lista_lotes, Lista_fechas) {
+qualitycheck_lotes <- function(Producto, Lista_lotes, Lista_fechas) {
     
   my_data<-list()  
   

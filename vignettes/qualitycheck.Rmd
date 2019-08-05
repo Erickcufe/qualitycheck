@@ -27,13 +27,13 @@ se ingresa el nombre del producto, del lote, fecha de inicio en fomarto dia-mes-
 qualitycheck_dates("Metformin", "0001", "08-01-2019")
 ```
 
-## qualitycheck_lots(Producto, Lista_lotes, Lista_fechas).
+## qualitycheck_lotes(Producto, Lista_lotes, Lista_fechas).
 Se ingresa todo entre comillas y separado con una coma:
 Como en el ejemplo si se introducen forma de vector c("1","2","3") los lotes, se deben ingresar tambien la misma cantidad de fechas de inicio. 
 Esta funcion genera un .csv con los lotes y sus fechas.
 
 ```{r}
-qualitycheck_lots("Aspirina", c("1a","2b","3c","4c"), c("10-09-2019", "20-03-2019","30-03-2019", "30-11-2019"))
+qualitycheck_lotes("Aspirina", c("1a","2b","3c","4c"), c("10-09-2019","20-03-2019","30-03-2019", "30-11-2019"))
 
 ```
 

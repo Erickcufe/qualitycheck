@@ -12,7 +12,11 @@ License: What license it uses
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    lubridate
+    lubridate,
+    magrittr,
+    dplyr,
+    stringr,
+    stringi
 Suggests: 
     knitr,
     rmarkdown
