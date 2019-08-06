@@ -14,15 +14,15 @@ qualitycheck_check <- function(df) {
 }
 
 
-example <- read.csv("Aspirina.csv")
-
-
-
-example_1 <- t(example)
-
-qualitycheck_check(example_1)
-
-example
+# example <- read.csv("Aspirina.csv")
+# 
+# 
+# 
+# example_1 <- t(example)
+# 
+# qualitycheck_check(example_1)
+# 
+# example
 # row.names(example) <- example$X
 # example$X <- NULL
 
